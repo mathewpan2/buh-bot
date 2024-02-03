@@ -3,3 +3,4 @@ chat_logs.txt
 chat.json
 compiled_data.json
 processed/*
+outputs/*
