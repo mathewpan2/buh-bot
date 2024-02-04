@@ -4,3 +4,4 @@ chat.json
 compiled_data.json
 processed/*
 outputs/*
+server/.venv/*
