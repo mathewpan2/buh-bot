@@ -1,6 +1,5 @@
 import json
 import multiprocessing as mp 
-import queue
 
 WORKER_COUNT = 7
 file_path = './chat.json'
@@ -37,15 +36,23 @@ def worker(obj, queue):
 with open(file_path, 'r') as file:
     data = json.load(file)
 
+current_author = ''
+content = ''
 count = 0
 sample = Sample()
 with open('./processed.json', 'w') as file:
     file.write('{\n"data":[\n')
     for obj in data['data']:
         if not obj['author']['isBot']:
-            # if len(obj['content'].split()) < 5: # skip short messages
-            #     continue
-            # else: # if message is long enough
+            if not current_author:
+                current_author = obj['author']['name']
+            else: # if there is a author
+                if current_author == obj['author']['name']:
+                    content += obj['content'] + " "
+                else: # if it's a different author
+                    current_author = obj['author']['name']
+                    sample.addLine(content, file)
+                    content, current_author = ''
             sample.addLine(obj['content'], file)
             count += 1
             if count > 5:

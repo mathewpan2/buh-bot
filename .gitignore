@@ -5,3 +5,4 @@ compiled_data.json
 processed/*
 outputs/*
 server/.venv/*
+cleaned_data.json
