@@ -1,7 +1,8 @@
 .env/*
-chat_logs.txt
-chat.json
-compiled_data.json
+data/*
+models/*
 processed/*
 outputs/*
 server/.venv/*
+server/.env
+

@@ -1,6 +1,10 @@
 import discord
 import json
 import requests
+from dotenv import load_dotenv
+import os 
+
+load_dotenv()
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -49,5 +53,5 @@ async def on_message(message):
         
 
 
-client.run()
+client.run(os.environ['TOKEN'])
     
