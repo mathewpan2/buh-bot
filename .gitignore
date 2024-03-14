@@ -1,8 +1,8 @@
-.env/*
+.venv/*
 data/*
-models/*
+peft/*
 processed/*
 outputs/*
-server/.venv/*
-server/.env
-
+server/*
+backup/*
+Openbhi-2.5-mistral-7b/*
