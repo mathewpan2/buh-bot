@@ -7,3 +7,6 @@ server/*
 backup/*
 Openbhi-2.5-mistral-7b/*
 .env
+bhi-classification/.venv/*
+bhi-classification/compiled_data.csv
+
